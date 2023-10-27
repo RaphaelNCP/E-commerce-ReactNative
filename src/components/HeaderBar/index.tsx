@@ -1,28 +1,27 @@
-
-import { useState, useEffect } from 'react';
-import { Image, Text, TextInput, View } from 'react-native';
-import { styles } from './HeaderBar';
-const lupa = require('../../../assets/lupa.png');
+import { useState, useEffect } from "react";
+import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { styles } from "./HeaderBar";
+const carrinho = require("../../../assets/carrinho.png");
 
 export const HeaderBar = () => {
-    const [time, setTime] = useState(new Date());
+  const [time, setTime] = useState(new Date());
 
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            setTime(new Date());
-        }, 1000);
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
 
-        return () => clearInterval(intervalId);
-    }, []);
+    return () => clearInterval(intervalId);
+  }, []);
 
-    return (
-        <View style={styles.container}>
-            <View style={styles.search}>
-                <Image style={styles.image} source={lupa}/>
-                <TextInput style={styles.input} placeholder='Pesquisar'/>
-            </View>
-            <Text style={styles.text}>MeteorOlho</Text>
-            <Text>{time.toLocaleTimeString()}</Text>
-        </View>
-    );
+  return (
+    <View>
+      <View style={styles.container}>
+        <Text style={styles.text}>MeteorOlho</Text>
+        <TouchableOpacity>
+          <Image style={styles.image} source={carrinho} />
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
 };
