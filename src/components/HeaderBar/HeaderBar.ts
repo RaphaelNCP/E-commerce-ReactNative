@@ -7,16 +7,22 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
     padding: 10,
     alignItems: "center",
-    backgroundColor: "#E3CCAE",
+    backgroundColor: "#B8621B",
+    marginBottom: 10,
   },
   image: {
-    height: 20,
-    width: 20,
+    height: 30,
+    width: 30,
     marginRight: 10,
   },
   text: {
     marginRight: 65,
-    width: 80,
+    width: 100,
     fontWeight: "bold",
+    color: "#fff",
+  },
+  icons: {
+    display: "flex",
+    flexDirection: "row",
   },
 });

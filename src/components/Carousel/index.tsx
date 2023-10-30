@@ -1,6 +1,7 @@
 import { View, Dimensions, Image, Text } from "react-native";
 import Carousel from "react-native-snap-carousel";
 import { styles } from "./Carousel";
+import { useFonts, Bitter_300Light_Italic } from "@expo-google-fonts/bitter";
 
 const SLIDER_WIDTH = Dimensions.get("window").width;
 
@@ -32,16 +33,33 @@ const carouselData = [
   },
 ];
 
-const carouselRenderItem = ({ item, index }: CarouselItemProps) => {
-  return (
-    <View style={styles.cardCarousel} key={index}>
-      <Image source={{ uri: item.imgURL }} style={styles.image} />
-      <Text style={styles.text}>{item.textImg}</Text>
-    </View>
-  );
-};
-
 export const CarouselItens = () => {
+  let [fontsLoaded, fontError] = useFonts({
+    Bitter_300Light_Italic,
+  });
+
+  if (!fontsLoaded || fontError) {
+    return null;
+  }
+  const carouselRenderItem = ({ item, index }: CarouselItemProps) => {
+    return (
+      <View style={styles.cardCarousel} key={index}>
+        <Image source={{ uri: item.imgURL }} style={styles.image} />
+        <Text
+          style={{
+            color: "#fff",
+            fontSize: 20,
+            textAlign: "center",
+            marginBottom: 10,
+            fontFamily: "Bitter_300Light_Italic",
+          }}
+        >
+          {item.textImg}
+        </Text>
+      </View>
+    );
+  };
+
   return (
     <View style={styles.container}>
       <Carousel
