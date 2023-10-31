@@ -1,32 +1,20 @@
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { HeaderBar } from "../../components/HeaderBar";
 import { Search } from "../../components/Search";
 import { CarouselItens } from "../../components/Carousel";
-import { useFonts, Bitter_800ExtraBold } from "@expo-google-fonts/bitter";
+import { Filter } from "../../components/Filter";
+import { Title } from "../../components/Title";
 
 export const MainScreen = () => {
-  let [fontsLoaded, fontError] = useFonts({
-    Bitter_800ExtraBold,
-  });
-
-  if (!fontsLoaded && !fontError) {
-    return null;
-  }
   return (
     <View style={styles.container}>
       <HeaderBar />
+      <Filter />
       <Search />
-      <Text
-        style={{
-          fontFamily: "Bitter_800ExtraBold",
-          fontSize: 50,
-          textAlign: "center",
-          marginBottom: 10,
-        }}
-      >
-        DESTAQUES
-      </Text>
-      <CarouselItens />
+      <ScrollView>
+        <Title nome="DESTAQUES" />
+        <CarouselItens />
+      </ScrollView>
     </View>
   );
 };

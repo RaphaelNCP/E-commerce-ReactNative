@@ -8,7 +8,6 @@ export const styles = StyleSheet.create({
     padding: 10,
     alignItems: "center",
     backgroundColor: "#B8621B",
-    marginBottom: 10,
   },
   image: {
     height: 30,
