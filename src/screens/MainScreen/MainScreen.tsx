@@ -4,6 +4,8 @@ import { Search } from "../../components/Search";
 import { CarouselItens } from "../../components/Carousel";
 import { Filter } from "../../components/Filter";
 import { Title } from "../../components/Title";
+import { Secao } from "../../components/Secao";
+import { cardMock } from "../../Mocks/CardMock";
 
 export const MainScreen = () => {
   return (
@@ -12,8 +14,9 @@ export const MainScreen = () => {
       <Filter />
       <Search />
       <ScrollView>
-        <Title nome="DESTAQUES" />
+        <Title titulo="DESTAQUES" />
         <CarouselItens />
+        <Secao mock={cardMock} titulo="LANÇAMENTOS" />
       </ScrollView>
     </View>
   );

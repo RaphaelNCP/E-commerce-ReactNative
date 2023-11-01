@@ -2,7 +2,7 @@ import { Text, View } from "react-native";
 import { useFonts, Bitter_800ExtraBold } from "@expo-google-fonts/bitter";
 import { TitleProps } from "../../Types/Types";
 
-export const Title = ({ nome }: TitleProps) => {
+export const Title = ({ titulo }: TitleProps) => {
   let [fontsLoaded, fontError] = useFonts({
     Bitter_800ExtraBold,
   });
@@ -21,7 +21,7 @@ export const Title = ({ nome }: TitleProps) => {
           marginBottom: 10,
         }}
       >
-        {nome}
+        {titulo}
       </Text>
     </View>
   );
