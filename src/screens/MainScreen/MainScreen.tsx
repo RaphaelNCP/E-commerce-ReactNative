@@ -5,7 +5,11 @@ import { CarouselItens } from "../../components/Carousel";
 import { Filter } from "../../components/Filter";
 import { Title } from "../../components/Title";
 import { Secao } from "../../components/Secao";
-import { cardMock } from "../../Mocks/CardMock";
+import {
+  femaleClothesMock,
+  maleClothesMock,
+  trendyClothesMock,
+} from "../../Mocks/CardMock";
 
 export const MainScreen = () => {
   return (
@@ -16,7 +20,9 @@ export const MainScreen = () => {
       <ScrollView>
         <Title titulo="DESTAQUES" />
         <CarouselItens />
-        <Secao mock={cardMock} titulo="LANÇAMENTOS" />
+        <Secao mock={trendyClothesMock} titulo="TENDÊNCIAS" />
+        <Secao mock={maleClothesMock} titulo="MASCULINO" />
+        <Secao mock={femaleClothesMock} titulo="FEMININO" />
       </ScrollView>
     </View>
   );

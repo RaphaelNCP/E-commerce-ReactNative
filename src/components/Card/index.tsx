@@ -4,26 +4,20 @@ import { styles } from "./Card";
 
 export const Card = ({ nome, imagem, descricao, preco }: CardProps) => {
   return (
-    <View style={styles.container}>
-      <TouchableOpacity style={styles.button}>
-        <Image style={styles.image} source={{ uri: imagem }} />
-        <Text numberOfLines={1} ellipsizeMode="tail" style={styles.name}>
-          {nome}
+    <TouchableOpacity style={styles.button}>
+      <Image style={styles.image} source={{ uri: imagem }} />
+      <Text numberOfLines={1} ellipsizeMode="tail" style={styles.name}>
+        {nome}
+      </Text>
+      <View style={styles.discriptionContainer}>
+        <Text numberOfLines={4} ellipsizeMode="tail" style={styles.description}>
+          {descricao}
         </Text>
-        <View style={styles.discriptionContainer}>
-          <Text
-            numberOfLines={5}
-            ellipsizeMode="tail"
-            style={styles.description}
-          >
-            {descricao}
-          </Text>
-          <View style={styles.priceContainer}>
-            <Text style={styles.price}>{preco}</Text>
-            <Text style={styles.coin}>R$</Text>
-          </View>
+        <View style={styles.priceContainer}>
+          <Text style={styles.price}>{preco}</Text>
+          <Text style={styles.coin}>R$</Text>
         </View>
-      </TouchableOpacity>
-    </View>
+      </View>
+    </TouchableOpacity>
   );
 };
