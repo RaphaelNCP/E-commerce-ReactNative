@@ -19,3 +19,7 @@ export type SectionProps = {
   titulo: string;
   mock: Cards;
 };
+export type ModalProps = {
+  visible: boolean;
+  setVisible: React.Dispatch<React.SetStateAction<boolean>>;
+};
